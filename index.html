@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="https://cdn4.iconfinder.com/data/icons/new-google-logo-2015/400/new-google-favicon-512.png">
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google Font Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link href="style.css">
+<title>Google</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"
+integrity="sha512-Xm9qbB6Pu06k3PUwPj785dyTl6oHxgsv9nHp7ej7nCpAqGZT3OZpsELuCYX05DdonFpTlBpXMOxjavIAIUwr0w=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<div id="google">
+</div>
+<div id="mainBody">
+<img id="googleLogo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo" />
+<div class="search">
+<div class="search__input">
+<img src="https://cdn-icons-png.flaticon.com/512/3128/3128287.png"class="material-icons" width="25px" height="25px"></img>
+<input type="text" id="search-input" />
+<img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-25-512.png" width="35px" height="35px">  
+</div>
+<div class="search__buttons">
+<button onclick="handleSearch()">Google Search</button>
+<button onclick="handleSearch()">I'm Feeling Lucky</button>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+document.getElementById('googleLogo').addEventListener('click', incrementCount);
+document.addEventListener('keypress', function (e) {
+if (e.key === 'Enter') {
+handleSearch();
+}
+});
+function check() {
+const searchInput = document.getElementById('search-input').value.trim();
+const specificText = "google classroom"; // Replace this with your specific trigger text
+if (searchInput.toLowerCase() === specificText.toLowerCase()) {var url = 'https://mangopi.xyz'
+ var win = window.open();
+ win.document.body.style.margin = '0';
+ win.document.body.style.height = '100vh';
+ var iframe = win.document.createElement('iframe');
+ iframe.style.border = 'none';
+ iframe.style.width = '100%';
+ iframe.style.height = '100%';
+ iframe.style.margin = '0';
+ iframe.src = url;
+ win.document.body.appendChild(iframe);
+} else {
+ const specificText = "upside down cat dancing"; 
+ if (searchInput.toLowerCase() === specificText.toLowerCase()) {var url = 'https://code.mangopi.xyz'
+ var win = window.open();
+ win.document.body.style.margin = '0';
+ win.document.body.style.height = '100vh';
+ var iframe = win.document.createElement('iframe');
+ iframe.style.border = 'none';
+ iframe.style.width = '100%';
+ iframe.style.height = '100%';
+ iframe.style.margin = '0';
+ iframe.src = url;
+ win.document.body.appendChild(iframe);
+} else {
+window.location.href = `https://www.google.com/search?q=${encodeURIComponent(searchInput)}`;
+}
+}
+}
+function handleSearch() {
+if(count == 3) {
+check();
+} else {
+const searchInput = document.getElementById('search-input').value.trim();
+window.location.href = `https://www.google.com/search?q=${encodeURIComponent(searchInput)}`;
+}
+}
+function handleKeyPress(e) {
+if (e.key === 'Enter') {
+handleSearch();
+}
+}
+document.addEventListener('keypress', handleKeyPress);
+let count = 0;
+function incrementCount() {
+count++;
+}
+</script>
+<style>
+* {
+margin: 0;
+}
+body {
+display: flex;
+flex-direction: column;
+height: 100vh;
+justify-content: center; /* Center content vertically */
+align-items: center; /* Center content horizontally */
+}
+/* Header */
+.header {
+display: flex;
+justify-content: space-between;
+padding: 20px 30px;
+align-items: center;
+width: 100%;
+}
+.header a {
+margin-right: 20px;
+text-decoration: inherit;
+color: rgba(0, 0, 0, 0.87);
+font-size: 15px;
+}
+.header a:hover {
+text-decoration: underline;
+}
+.header__right {
+display: flex;
+margin-left: auto;
+min-width: 13vw;
+justify-content: space-between;
+}
+.header__right .header__apps {
+margin-right: 10px;
+}
+/* Main Body */
+#mainBody{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center; /* Center content vertically */
+flex: 1;
+}
+#googleLogo {
+object-fit: contain;
+height: 100px;
+}
+/* Search */
+.search__input {
+display: flex;
+align-items: center;
+border: 1px solid lightgray;
+height: 30px;
+padding: 10px 20px;
+border-radius: 999px;
+width: 75vw;
+margin: 0 auto;
+margin-top: 40px;
+max-width: 560px;
+}
+.search__input input {
+flex: 1;
+padding: 10px 20px;
+border: none;
+outline: none;
+}
+.search__input .material-icons {
+color: gray;
+}
+.search__buttons {
+margin-top: 30px;
+display: flex;
+justify-content: center;
+}
+.search__buttons button {
+margin: 5px;
+padding: 10px 15px;
+background-color: #f8f8f8;
+outline: none;
+border: none;
+cursor: pointer;
+}
+</style>
+</body>
+</html>
